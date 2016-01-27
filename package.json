@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/awb99/zmqnodeTest#readme",
   "dependencies": {
+    "config": "^1.19.0",
+    "express": "^4.13.4",
     "zmq": "^2.14.0"
   }
 }
