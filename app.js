@@ -32,28 +32,26 @@ var orders = [
 var zmq = require('zmq')
   , sock = zmq.socket('req');
 
+  console.log('Connecting to ZMQ order server at ' +appConfig.server.orderUrl );
+  sock.connect(appConfig.server.orderUrl);
 
 app.get('/api/orders', function(req, res) {
   console.log("/api/orders get received");
 
-  console.log('Connecting to ZMQ order server at ' +appConfig.server.orderUrl );
-  sock.connect(appConfig.server.orderUrl);
+  console.log('requesting data');
+  sock.send('calendar');
 
   sock.on('message', function(msg) {
     var json= msg.toString()
     console.log('got ZMQ reply data ');
-    sock.close();
+
     res.send (json);
     //res.json( orders );
   });
 
-  console.log('requesting data');
-  sock.send('calendar');
-
-
-
-
 });
+
+//sock.close();
 
 var httpServer = http.createServer(app);
 httpServer.listen(appConfig.server.port);
