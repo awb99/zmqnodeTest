@@ -1,7 +1,8 @@
 {
   "App": {
     "server": {
-      "port": 88
+      "port": 88,
+      "orderUrl" : "tcp://104.222.96.51:33333"
     },
     "data": {
       "dataFolder": "dataDemo/"

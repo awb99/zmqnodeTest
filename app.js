@@ -29,9 +29,30 @@ var orders = [
    }
 ];
 
+var zmq = require('zmq')
+  , sock = zmq.socket('req');
+
+
 app.get('/api/orders', function(req, res) {
   console.log("/api/orders get received");
-  res.json( orders );
+
+  console.log('Connecting to ZMQ order server at ' +appConfig.server.orderUrl );
+  sock.connect(appConfig.server.orderUrl);
+
+  sock.on('message', function(msg) {
+    var json= msg.toString()
+    console.log('got ZMQ reply data ');
+    sock.close();
+    res.send (json);
+    //res.json( orders );
+  });
+
+  console.log('requesting data');
+  sock.send('calendar');
+
+
+
+
 });
 
 var httpServer = http.createServer(app);
