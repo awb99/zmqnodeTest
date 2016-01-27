@@ -10,3 +10,7 @@ apt-get install libzmq5-dev
 
 Install ZMQ:
 apt-get install pkg-config 
+
+NPM
+install needs to run as NON ROOT; otherwise ZMQ would not install correctly
+npm install
