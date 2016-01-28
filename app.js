@@ -41,7 +41,12 @@ app.get('/api/orders', function(req, res) {
   console.log('requesting data');
   sock.send('calendar');
 
-  sock.on('message', function(msg) {
+  // emitter.addListener(event, listener)is an alias for emitter.on(event, listener).
+  //  You can use emitter.removeListener(event, listener)to remove a listener.
+  // Or use emitter.once (event, listener) to install a listener "one use
+
+//sock.on('message', function(msg) {
+  sock.once ('message', function(msg) {
     var json= msg.toString()
     console.log('got ZMQ reply data ');
 

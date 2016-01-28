@@ -17,25 +17,45 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th> DateTime </th>
-          <th> Actual </th>
-          <th> Consensus</th>
-          <th> High </th>
-          <th> Low </th>
-          <th> Median </th>
-          <th> Number </th>
+          <th> LogTimeFull </th>
+          <th> FixApi </th>
+          <th> AccountName </th>
+
+          <!-- Order Data -->
+          <th> Symbol </th>
+          <th> Action </th>
+          <th> Quantity </th>
+          <th> Price </th>
+
+          <!-- Order Status -->
+          <th> Executed </th>
+          <th> OpenQuantity </th>
+          <th> Status </th>
+
+          <th> FixOrderID </th>
+
+
         </tr>
       </thead>
 
       <tbody>
         <tr ng-repeat="e in orders">
+          <td> {{e.LogTimeFull}}</td>
           <td> {{e.AccountName}} </td>
-          <td> {{e.symbol}}</td>
-          <td> {{e.Consensus}}</td>
-          <td> {{e.EstimateHigh}}</td>
-          <td> {{e.EstimateLow}}</td>
-          <td> {{e.EstimateMedian}} </td>
-          <td> {{e.EstimateNumber}} </td>
+          <td> {{e.FixApi}}</td>
+
+          <!-- Order Data -->
+          <td> {{e.Symbol}}</td>
+          <td> {{e.Action}}</td>
+          <td> {{e.Quantity}}</td>
+          <td> {{e.Price}}</td>
+        
+          <!-- Order Status -->
+          <td> {{e.Status}} </td>
+          <td> {{e.Executed}} </td>
+          <td> {{e.OpenQuantity}} </td>
+
+          <td> {{e.FixOrderID}} </td>
           </td>
         </tr>
       </tbody>
