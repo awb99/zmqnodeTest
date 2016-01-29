@@ -1,7 +1,7 @@
 {
   "App": {
     "server": {
-      "port": 88888,
+      "port": 8888,
       "orderUrl" : "tcp://104.222.96.51:33333"
     },
     "data": {
