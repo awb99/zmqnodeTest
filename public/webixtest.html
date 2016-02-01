@@ -24,14 +24,10 @@
     <h2 ng-show="isLoading"> Loading... <h2>
 
       <label> machine: </label>
-      <select ng-model="currentMachine" ng-change="getFeedBenchmark()">
+      <select ng-model="machine" ng-change="load_orders()">
           <option ng-repeat="opt in machines" value="{{opt}}"> {{opt}} </option>
       </select>
 
-      <select ng-model="machine">
-        <option value="anthony">ant</option>
-        <option value="mapp"> matt </option>
-      </select>
 
     <button type="button" ng-click="load_orders();" > Refresh </button>
 
