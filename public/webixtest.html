@@ -22,7 +22,7 @@
     <h1>{{myName}}</h1>
 
     <h2 ng-show="isLoading"> Loading... <h2>
-    <input type="button" ng-click="load_orders();">Refresh </input>
+    <button type="button" ng-click="load_orders();" > Refresh </button>
 
    <div webix-ui view="datatable" webix-data="orders" autoheight="true" select="row">
       <div view="column" id="LogTimeFull" sort="string" width="250" css="rating">LogTimeFull</div>
