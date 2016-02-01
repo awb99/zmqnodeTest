@@ -5,8 +5,8 @@ angular.module('root', ["webix"])
 .controller("riskController", ["$scope", "$http", function($scope, $http) {
 
   $scope.myName = 'Risk Management - Orders ';
-  $scope.machine= {};
-  $scope.machine = {};
+  $scope.machine= "";
+  $scope.machines = {};
   $scope.isLoading = true;
   $scope.orders = [];
 
