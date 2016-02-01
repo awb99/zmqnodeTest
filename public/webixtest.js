@@ -40,6 +40,16 @@ angular.module('root', ["webix"])
     });
   };
 
+  $scope.clear_data = function(predicate) {
+    $scope.orders = [];
+    var reqUrl = '/api/clear/' + $scope.machine;
+    console.log("clearing orders for machine: " +reqUrl);
+    $http.get(reqUrl).success(function(data) {
+      console.log("cleared data.");
+    });
+  };
+
+
 $scope.load_orders(); //on page load, loadorders.
 
 }]);

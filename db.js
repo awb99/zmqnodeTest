@@ -57,6 +57,21 @@ var loadOrdersMachine = function(machine, callback) {
   });
 }
 
+var ClearOrdersMachine = function(machine, callback) {
+  console.log('clearing orders for machine from zmq');
+  sock.send("clear:" + machine);
+  // emitter.addListener(event, listener)is an alias for emitter.on(event, listener).
+  //  You can use emitter.removeListener(event, listener)to remove a listener.
+  // Or use emitter.once (event, listener) to install a listener "one use
+  //sock.on('message', function(msg) {
+  sock.once('message', function(msg) {
+    var json = msg.toString()
+    console.log('clear message received from ZMQ.');
+    callback(json);
+  });
+}
+
 module.exports.loadOrdersMachine = loadOrdersMachine;
 module.exports.loadOrdersAll = loadOrdersAll;
 module.exports.loadMachines = loadMachines;
+module.exports.ClearOrdersMachine=ClearOrdersMachine;

@@ -47,6 +47,16 @@ app.get('/api/orders/:machine', function(req, res) {
     //res.json( orders );
   });
 });
+app.get('/api/clear/:machine', function(req, res) {
+  var machine = req.params.machine;
+  console.log("received request for /api/orders/machine: "  + machine);
+  db.ClearOrdersMachine(machine, function(json) {
+    res.send(json);
+    //res.json( orders );
+  });
+});
+
+
 
 //sock.close();
 
