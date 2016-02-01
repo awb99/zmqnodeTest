@@ -21,9 +21,8 @@
   <div ng-controller="riskController">
     <h1>{{myName}}</h1>
 
-    <h1 ng-show="isLoading"> Loading... <h1>
-
-      <a ng-click="load_orders();">Refresh </a>
+    <h2 ng-show="isLoading"> Loading... <h2>
+    <input type="button" ng-click="load_orders();">Refresh </input>
 
    <div webix-ui view="datatable" webix-data="orders" autoheight="true" select="row">
       <div view="column" id="LogTimeFull" sort="string" width="250" css="rating">LogTimeFull</div>
