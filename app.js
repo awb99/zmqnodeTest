@@ -23,7 +23,8 @@ app.get('/', function(req, res) {
 
 app.get('/api/machines', function(req, res) {
   console.log("/api/machines get received");
-  db.loadMachines(function(json) {
+  db.loadMachines( function(json) {
+    console.log ("data rcvd: " + json);
     res.send(json);
     //res.json( orders );
   });
