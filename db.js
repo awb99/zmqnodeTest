@@ -17,7 +17,6 @@ sock.connect(appConfig.server.orderUrl);
 
 var loadMachines = function(callback) {
   console.log('requesting machines list from zmq');
-  sock.send('machines');
   // emitter.addListener(event, listener)is an alias for emitter.on(event, listener).
   //  You can use emitter.removeListener(event, listener)to remove a listener.
   // Or use emitter.once (event, listener) to install a listener "one use
@@ -27,6 +26,7 @@ var loadMachines = function(callback) {
     console.log('machines list received from ZMQ.');
     callback(json);
   });
+  sock.send('machines');
 }
 
 var loadOrdersAll = function(callback) {
