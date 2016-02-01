@@ -51,7 +51,7 @@ app.get('/api/clear/:machine', function(req, res) {
   var machine = req.params.machine;
   console.log("received request for /api/orders/machine: "  + machine);
   db.ClearOrdersMachine(machine, function(json) {
-    res.send(json);
+    res.send("ok.");
     //res.json( orders );
   });
 });
