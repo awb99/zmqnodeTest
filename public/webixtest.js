@@ -4,11 +4,10 @@ angular.module('root', ["webix"])
 
 .controller("riskController", ["$scope", "$http", function($scope, $http) {
 
-  $scope.myName = 'Risk Management Console';
+  $scope.myName = 'Risk Management - Orders ';
 
   $scope.isLoading = true;
   $scope.orders = [];
-
 
   $scope.load_orders = function(predicate) {
     $scope.isLoading = true;
@@ -20,14 +19,10 @@ angular.module('root', ["webix"])
       console.log("orders received: items:" + data.length);
       //console.log("data= " + JSON.stringify(data));
       $scope.orders = data;
-      isLoading = false;
+      $scope.isLoading = false;
     });
   };
 
-$scope.load_orders();
-
-
-
-
+$scope.load_orders(); //on page load, loadorders.
 
 }]);
