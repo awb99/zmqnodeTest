@@ -22,6 +22,17 @@
     <h1>{{myName}}</h1>
 
     <h2 ng-show="isLoading"> Loading... <h2>
+
+      <label> machine: </label>
+      <select ng-model="currentMachine" ng-change="getFeedBenchmark()">
+          <option ng-repeat="opt in machines" value="{{opt}}"> {{opt}} </option>
+      </select>
+
+      <select ng-model="machine">
+        <option value="anthony">ant</option>
+        <option value="mapp"> matt </option>
+      </select>
+
     <button type="button" ng-click="load_orders();" > Refresh </button>
 
    <div webix-ui view="datatable" webix-data="orders" autoheight="true" select="row">
