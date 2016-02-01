@@ -17,8 +17,9 @@ app.use(express.static('public'));      // public static content
 //app.use(express.json());      // if needed
 
 app.get('/', function(req, res){
-  res.sendfile('./public/orders.html');
+  res.sendfile('./public/default.html');
 });
+
 
 
 app.get('/api/orders', function(req, res) {
