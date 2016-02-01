@@ -38,9 +38,11 @@ app.get('/api/orders', function(req, res) {
   });
 });
 
+
 app.get('/api/orders/:machine', function(req, res) {
-  console.log("/api/orders/machine get received");
-  db.loadOrders(function(json) {
+  var machine = req.params.machine;
+  console.log("received request for /api/orders/machine: "  + machine);
+  db.loadOrdersMachine(machine, function(json) {
     res.send(json);
     //res.json( orders );
   });

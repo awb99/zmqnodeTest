@@ -43,7 +43,7 @@ var loadOrdersAll = function(callback) {
   });
 }
 
-var loadOrders = function(machine, callback) {
+var loadOrdersMachine = function(machine, callback) {
   console.log('requesting orders for machine from zmq');
   sock.send(machine);
   // emitter.addListener(event, listener)is an alias for emitter.on(event, listener).
@@ -57,6 +57,6 @@ var loadOrders = function(machine, callback) {
   });
 }
 
-module.exports.loadOrders = loadOrders;
+module.exports.loadOrdersMachine = loadOrdersMachine;
 module.exports.loadOrdersAll = loadOrdersAll;
 module.exports.loadMachines = loadMachines;
