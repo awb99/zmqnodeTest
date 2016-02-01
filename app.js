@@ -24,6 +24,7 @@ app.get('/', function(req, res) {
 app.get('/api/machines', function(req, res) {
   console.log("/api/machines get received");
   db.loadMachines( function(json) {
+        console.log("response received.. now sending to frontend.");
     console.log ("data rcvd: " + json);
     res.send(json);
     //res.json( orders );
@@ -33,6 +34,7 @@ app.get('/api/machines', function(req, res) {
 app.get('/api/orders', function(req, res) {
   console.log("/api/orders get received");
   db.loadOrdersAll(function(json) {
+        console.log("response received.. now sending to frontend.");
     res.send(json);
     //res.json( orders );
   });
@@ -43,16 +45,18 @@ app.get('/api/orders/:machine', function(req, res) {
   var machine = req.params.machine;
   console.log("received request for /api/orders/machine: "  + machine);
   db.loadOrdersMachine(machine, function(json) {
+        console.log("response received.. now sending to frontend.");
     res.send(json);
     //res.json( orders );
   });
 });
+
 app.get('/api/clear/:machine', function(req, res) {
   var machine = req.params.machine;
-  console.log("received request for /api/orders/machine: "  + machine);
+  console.log("received request for /api/clear/machine: "  + machine);
   db.ClearOrdersMachine(machine, function(json) {
-    res.send("ok.");
-    //res.json( orders );
+    console.log("response received.. now sending to frontend.");
+    res.send("[]");
   });
 });
 
