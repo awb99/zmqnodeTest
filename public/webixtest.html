@@ -17,66 +17,44 @@
 
 </head>
 
-<body  >
+<body>
   <div ng-controller="riskController">
     <h1>{{myName}}</h1>
 
-    <h2 ng-show="isLoading"> Loading... <h2>
+    <h2 ng-show="isLoading"> Loading...
+      <h2>
 
-      <label> machine: </label>
-      <select ng-model="machine" ng-change="load_orders()">
+        <label> machine: </label>
+        <select ng-model="machine" ng-change="load_orders()">
           <option ng-repeat="opt in machines" value="{{opt}}"> {{opt}} </option>
-      </select>
+        </select>
 
 
-    <button type="button" ng-click="load_orders();" > Refresh </button>
-      <button type="button" ng-click="clear_data();" > Clear Data (on Server) </button>
+        <button type="button" ng-click="load_orders();"> Refresh </button>
+        <button type="button" ng-click="clear_data();"> Clear Data (on Server) </button>
 
-   <div webix-ui view="datatable" webix-data="orders" autoheight="true" select="row">
-      <div view="column" id="LogTimeFull" sort="string" width="250" css="rating">LogTimeFull</div>
-      <div view="column" id="AccountName" sort="string" width="120" css="rating">AccountName</div>
-      <div view="column" id="FixApi" sort="string" width="110" css="rating">FixApi</div>
+        <div webix-ui view="datatable" webix-data="orders" autoheight="true" select="row">
+          <div view="column" id="LogTimeFull" sort="string" width="250" css="rating">LogTimeFull</div>
+          <div view="column" id="AccountName" sort="string" width="120" css="rating">AccountName</div>
+          <div view="column" id="FixApi" sort="string" width="110" css="rating">FixApi</div>
 
-      <div view="column" id="Symbol" sort="string"  width="80"css="rating">Symbol</div>
-      <div view="column" id="Action" sort="string"  width="80"css="rating">Action</div>
-      <div view="column" id="Quantity"   sort="int"   width="80" >Quantity</div>
-      <div view="column" id="Price" sort="string"  width="80"css="rating">Price</div>
+          <div view="column" id="Symbol" sort="string" width="80" css="rating">Symbol</div>
+          <div view="column" id="Action" sort="string" width="80" css="rating">Action</div>
+          <div view="column" id="Quantity" sort="int" width="80">Quantity</div>
+          <div view="column" id="Price" sort="string" width="80" css="rating">Price</div>
 
-      <div view="column" id="Status" sort="string"  width="80"css="rating">Status</div>
-      <div view="column" id="Executed" sort="string"  width="80"css="rating">Executed</div>
-      <div view="column" id="OpenQuantity" sort="string"  width="80"css="rating">OpenQuantity</div>
-      <div view="column" id="FixOrderID" sort="string"  width="120"css="rating">FixOrderID</div>
-
-    </div>
-
-
-
-
-
-<!--
-  <div webix-ui type="space">
-    <div height="35">Hi There {{myName}}</div>
-    <div view="cols" type="wide" margin="10">
-      <div width="200">
-        <input type="text" placeholder="Type something here" ng-model="app">
-      </div>
-      <div view="resizer"></div>
-      <div view="tabview">
-        <div header="Orders">
-          Orders....
-
+          <div view="column" id="Status" sort="string" width="80" css="rating">Status</div>
+          <div view="column" id="Executed" sort="string" width="80" css="rating">Executed</div>
+          <div view="column" id="OpenQuantity" sort="string" width="80" css="rating">OpenQuantity</div>
+          <div view="column" id="FixOrderID" sort="string" width="120" css="rating">FixOrderID</div>
 
         </div>
-        <div header="Positions">
-          Positions - not implemented
-        </div>
-      </div>
-    </div>
-    <div height="35">Footer</div>
-  </div>
-  </div>
 
--->
+
+
+
+
+  
 
 </body>
 
